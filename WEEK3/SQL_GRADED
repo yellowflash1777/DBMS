@@ -1,0 +1,26 @@
+### Problem Statement:
+1. Q003flisdb: Write an SQL statement to find the fourth referee id for the match with match number 'M0001'.[Database: FLIS] flisdb:
+
+2. Q005flisdb: Write an SQL statement to find the city and playground of the teams whose away-jersey color(jersey_away_color) is 'Pink'.[Database: FLIS] flisdb:
+
+3. Q002flisdb: Write an SQL statement to find the player id of players from the team: 'Amigos'.[Database: FLIS] flisdb
+
+4. Q003lisdb: Write an SQL statement to find the first names and dob (student_fname, dob) of students who belong to the department with department code as 'ME' and who were born after '2003-06-15'.[Database: LIS] lisdb:
+
+5. Q003lisdb: Write an SQL statement to find the last names (faculty_lname) of male faculty who belong to the department:'Electrical Engineering'.[Database: LIS] lisdb:
+
+### Solutions :
+1. select fourth_referee from match_referees where match_num ='M0001';
+
+2. select city , playground from teams where jersey_away_color = 'Pink';
+
+3. select player_id from players where team_id in (select team_id from teams where name='Amigos');
+
+4. select student_fname, dob from students where department_code = 'ME' and dob > '2003-06-15';
+
+5. select faculty_lname from faculty where gender='M' and department_code=(select department_code from departments where department_name ='Electrical Engineering');
+
+
+
+
+
